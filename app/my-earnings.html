@@ -1,2 +1,30 @@
-<!-- my earnings HTML code to go in here -->
-<p>My earnings go here</p>
+<div ng-controller="meCtrl">
+    <section id="earnings-info">
+        <h2>My earnings info</h2>
+        <ul id="earnings-info-list">
+            <li>
+                <span class="label">Tip Total: </span>
+            </li>
+            <li>
+                <span class="label">Meal Count: </span>
+            </li>
+            <li>
+                <span class="label">Average Tip Per Meal: </span>
+            </li>
+        </ul>
+        <ul id="earnings-info-amount">
+            <li>
+                <span class="value">{{tipTotal | currency}}</span>
+            </li>
+            <li>
+                <span class="value">{{mealCount}}</span>
+            </li>
+            <li>
+                <span class="value">{{averageTip | currency}}</span>
+            </li>
+        </ul>
+    </section>
+    <section id="reset">
+        <button id="reset-button" ng-click="reset()">Reset</button>
+    </section>
+</div>

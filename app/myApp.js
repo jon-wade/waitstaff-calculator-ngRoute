@@ -6,8 +6,7 @@ angular.module('myApp', ['ngRoute'])
             $location.path('/error');
         });
 
-
-
+        //store variables that need to be accessible from each controller
         $rootScope.tipTotal=0;
         $rootScope.mealCount=0;
         $rootScope.averageTip=0;
@@ -37,12 +36,11 @@ angular.module('myApp', ['ngRoute'])
     }])
     .controller('HomeCtrl', ['$scope', function($scope){
         //home page controller code in here
-
+        //none required
 
     }])
     .controller('nmCtrl', function($scope, $rootScope){
         //new-meal page controller code in here
-
         $scope.baseMealPrice;
         $scope.taxRate;
         $scope.tipPercentage;
@@ -50,7 +48,6 @@ angular.module('myApp', ['ngRoute'])
         $scope.subTotal=0;
         $scope.tip=0;
         $scope.customerTotal=0;
-
 
         $scope.submit = function(){
             if ($scope.form.$invalid){
@@ -66,6 +63,10 @@ angular.module('myApp', ['ngRoute'])
                 $rootScope.tipTotal += $scope.tip;
                 $rootScope.mealCount++;
                 $rootScope.averageTip = $scope.tipTotal/$scope.mealCount;
+
+                console.log($rootScope.tipTotal);
+                console.log($rootScope.mealCount);
+                console.log($rootScope.averageTip);
             }
         };
 
@@ -77,22 +78,17 @@ angular.module('myApp', ['ngRoute'])
             $scope.tipPercentage=undefined;
         };
     })
-    .controller('meCtrl', function($scope){
+    .controller('meCtrl', function($scope, $rootScope){
         //my-earnings page controller code in here
+        console.log($rootScope.tipTotal);
+        console.log($rootScope.mealCount);
+        console.log($rootScope.averageTip);
+
+            $scope.reset = function(){
+                console.log('resetting all variables');
+                $rootScope.tipTotal=0;
+                $rootScope.mealCount=0;
+                $rootScope.averageTip=0;
+            }
     });
 
-    //
-
-    //
-    //    $scope.reset = function(){
-    //        console.log('resetting all variables');
-    //        $scope.cancel();
-    //        $scope.subTotal=0;
-    //        $scope.tip=0;
-    //        $scope.customerTotal=0;
-    //        $scope.tipTotal=0;
-    //        $scope.mealCount=0;
-    //        $scope.averageTip=0;
-    //    }
-    //
-    //});

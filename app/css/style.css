@@ -59,11 +59,6 @@ section#customer-charges h2, section#earnings-info h2 {
     padding-bottom: 20px;
 }
 
-section#earnings-info {
-    position: relative;
-    top: -380px;
-    left: 500px;
-}
 
 ul#customer-charges-list, ul#earnings-info-list {
     float: left;
@@ -99,24 +94,11 @@ ul#customer-charges-list li span.label {
     margin-right: 40px;
 }
 
-/* ---- earnings info section ---- */
-
-ul#earnings-info-list {
-    padding-left: 20px;
-}
-
 ul#earnings-info-amount {
-    margin-top: 36px;
-    padding-left: 213px;
+    padding-left: 285px;
+    padding-top: 17px;
 }
 
-/* ---- reset button ---- */
-
-section#reset {
-    position: relative;
-    top: -300px;
-    left: 850px;
-}
 
 /* ---- error messages --- */
 
