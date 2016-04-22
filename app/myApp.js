@@ -32,7 +32,8 @@ angular.module('myApp', ['ngRoute'])
             .when('/error', {
                 templateUrl: 'error.html'
             })
-            .otherwise('/error');
+            /* redirect all other routes to the home page */
+            .otherwise('/');
     }])
     .controller('HomeCtrl', ['$scope', function($scope){
         //home page controller code in here
