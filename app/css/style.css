@@ -10,17 +10,13 @@ h1 {
     text-align: center;
 }
 
-#body {
-    width: 80%;
-    margin: 0 auto;
-    padding-left: 230px;
-}
 
 /* ---- meal details section ---- */
 
 section#meal-details, section#customer-charges, section#earnings-info {
     border: 2px black solid;
-    width: 35%;
+    width: 100%;
+    margin-bottom: 50px;
 
 }
 
@@ -41,16 +37,6 @@ form#mealInput div {
     padding-bottom: 5px;
 }
 
-form#mealInput div#error-messages{
-    text-align: left;
-    color: red;
-}
-
-form#mealInput div#error-messages h2{
-    border: 0px;
-    padding: 0px;
-    font-size: 1em;
-}
 
 form#mealInput div#meal-submit {
     text-align: left;
@@ -73,13 +59,6 @@ section#customer-charges h2, section#earnings-info h2 {
     padding-bottom: 20px;
 }
 
-section#customer-charges {
-    position: relative;
-    top: -385px;
-    left: 500px;
-
-}
-
 section#earnings-info {
     position: relative;
     top: -380px;
@@ -88,6 +67,7 @@ section#earnings-info {
 
 ul#customer-charges-list, ul#earnings-info-list {
     float: left;
+    margin-left: 55px;
 }
 
 ul#customer-charges-amount{
@@ -140,13 +120,12 @@ section#reset {
 
 /* ---- error messages --- */
 
-div#error-messages {
+section#error-messages {
     position: relative;
-    top: -350px;
-    left: 215px;
+    top: -600px;
+    left: 407px;
     color: red;
-    border: 2px red dashed;
-    width: 36%;
+    width: 100%;
     padding: 30px;
 }
 
@@ -176,10 +155,11 @@ div#error-messages {
 }
 
 .main-body {
-    margin-top: 75px;
+    width: 30%;
+    margin: 75px auto 0 auto;
 }
 
 p {
-    margin: 5px 25% 5px 25%;
+    margin: 5px 0 5px 0;
     text-align: justify;
 }
