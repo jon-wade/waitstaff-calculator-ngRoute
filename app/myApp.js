@@ -5,6 +5,13 @@ angular.module('myApp', ['ngRoute'])
         $rootScope.$on('$routeChangeError', function() {
             $location.path('/error');
         });
+
+
+
+        $rootScope.tipTotal=0;
+        $rootScope.mealCount=0;
+        $rootScope.averageTip=0;
+
     })
     .config(['$routeProvider', function($routeProvider){
         $routeProvider
@@ -30,25 +37,48 @@ angular.module('myApp', ['ngRoute'])
     }])
     .controller('HomeCtrl', ['$scope', function($scope){
         //home page controller code in here
+
+
     }])
-    .controller('nmCtrl', function($scope){
+    .controller('nmCtrl', function($scope, $rootScope){
         //new-meal page controller code in here
+
+        $scope.baseMealPrice;
+        $scope.taxRate;
+        $scope.tipPercentage;
+        $scope.err=false;
+        $scope.subTotal=0;
+        $scope.tip=0;
+        $scope.customerTotal=0;
+
+
+        $scope.submit = function(){
+            if ($scope.form.$invalid){
+                $scope.err=true;
+                console.log('Houston, we have a problem...');
+                console.log($scope.err);
+            }
+            else {
+                $scope.subTotal = ($scope.baseMealPrice*(1+($scope.taxRate/100)));
+                $scope.tip = ($scope.baseMealPrice*($scope.tipPercentage/100));
+                $scope.customerTotal = $scope.subTotal + $scope.tip;
+
+                $rootScope.tipTotal += $scope.tip;
+                $rootScope.mealCount++;
+                $rootScope.averageTip = $scope.tipTotal/$scope.mealCount;
+            }
+
+            //console.log($scope.mealInput);
+            //console.log($scope.mealInput.baseMealPrice.$error);
+            //console.log($scope.mealInput.taxRate.$error);
+            //console.log($scope.mealInput.tipPercentage.$error);
+        };
     })
     .controller('meCtrl', function($scope){
         //my-earnings page controller code in here
     });
     //.controller('myCtrl', function($scope){
-    //    $scope.baseMealPrice;
-    //    $scope.taxRate;
-    //    $scope.tipPercentage;
-    //    $scope.err=false;
-    //    $scope.subTotal=0;
-    //    $scope.tip=0;
-    //    $scope.customerTotal=0;
-    //    $scope.tipTotal=0;
-    //    $scope.mealCount=0;
-    //    $scope.averageTip=0;
-    //
+
     //
     //    $scope.submit = function(){
     //        if ($scope.mealInput.$invalid){
