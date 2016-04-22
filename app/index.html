@@ -13,15 +13,15 @@
         <h1>Waitstaff Calculator</h1>
     </header>
     <nav>
-        <ul>
-            <li><a ng-href="#/">Home</a></li>
-            <li><a ng-href="#/new-meal">New Meal</a></li>
-            <li><a ng-href="#/my-earnings">My Earnings</a></li>
+        <ul ng-class="{'navigation':true}">
+            <li><a ng-href="#/">Home</a>
+            <li><a ng-href="#/new-meal">New Meal</a>
+            <li><a ng-href="#/my-earnings">My Earnings</a>
         </ul>
     </nav>
 
 
-    <div ng-view></div>
+    <div ng-class="{'main-body': true}" ng-view></div>
 
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
