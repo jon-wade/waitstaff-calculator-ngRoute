@@ -19,11 +19,13 @@
             <li><a ng-href="#/my-earnings">My Earnings</a>
         </ul>
     </nav>
-
-    <div ng-class="{'main-body': true}" ng-view></div>
+    <div class="animate-view-container">
+        <div ng-view ng-class="{'main-body': true}" class="animate-view"></div>
+    </div>
 
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
     <script type="text/javascript" src="myApp.js"></script>
 
 </body>

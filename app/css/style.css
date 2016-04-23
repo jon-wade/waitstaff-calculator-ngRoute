@@ -20,6 +20,10 @@ section#meal-details, section#customer-charges, section#earnings-info {
 
 }
 
+section#home-copy{
+    padding-top: 2px;
+}
+
 section#meal-details h2 {
     border-bottom: 2px black solid;
     padding-bottom: 20px;
@@ -145,3 +149,23 @@ p {
     margin: 5px 0 5px 0;
     text-align: justify;
 }
+
+.animate-view-container {
+    position:relative;
+    min-height: 100%;
+}
+
+.animate-view.ng-enter,
+.animate-view.ng-leave {
+    transition:1s linear all;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#eee;
+}
+.animate-view.ng-enter { opacity:0; z-index:100;}
+.animate-view.ng-enter.ng-enter-active {opacity:1;}
+.animate-view.ng-leave { opacity:1; z-index:99; }
+.animate-view.ng-leave.ng-leave-active { opacity:0;}

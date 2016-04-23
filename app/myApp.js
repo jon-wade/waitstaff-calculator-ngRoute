@@ -1,10 +1,15 @@
 //main body goes here
-angular.module('myApp', ['ngRoute'])
+angular.module('myApp', ['ngRoute', 'ngAnimate'])
     /* run section below provides an error page if there is an internal error */
-    .run(function($rootScope, $location) {
+    .run(function($rootScope, $location, $timeout) {
         $rootScope.$on('$routeChangeError', function() {
             $location.path('/error');
         });
+
+
+        $rootScope.$on('$routeChangeSuccess', function() {
+            $rootScope.isLoading = true;});
+
 
         //store variables that need to be accessible from each controller
         $rootScope.tipTotal=0;
